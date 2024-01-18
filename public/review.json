@@ -1,0 +1,51 @@
+[
+    {
+        "name": "Nash Patrik",
+        "profession": "CEO, Manpal",
+        "details": "Good parlour near the city.Highly recommended to everyone for come to this jerin's parlour ",
+        "rating": 5,
+        "image": "https://i.ibb.co/M6W6TqN/Ellipse-90.png"
+    },
+    {
+        "name": "Miriam Barron",
+        "profession": "CEO, Tata",
+        "details": "Good parlour near the city.Highly recommended to everyone for come to this jerin's parlour ",
+        "rating": 4,
+        "image": "https://i.ibb.co/tpsL0KS/Ellipse-91.png"
+    },
+    {
+        "name": "Bria Malone",
+        "profession": "CEO, Manpal",
+        "details": "Good parlour near the city.Highly recommended to everyone for come to this jerin's parlour ",
+        "rating": 3.5,
+        "image": "https://i.ibb.co/9c87n9t/Ellipse-92.png"
+    },
+    {
+        "name": "Mahin Alam",
+        "profession": "CEO, Alam",
+        "details": "Good parlour near the city.Highly recommended to everyone for come to this jerin's parlour",
+        "rating": 5,
+        "image": "https://i.ibb.co/M6W6TqN/Ellipse-90.png"
+    },
+    {
+        "name": "Kamrul Hasan",
+        "profession": "CEO, Hasan",
+        "details": "Good parlour near the city.Highly recommended to everyone for come to this jerin's parlour",
+        "rating": 4,
+        "image": "https://i.ibb.co/M6W6TqN/Ellipse-91.png"
+    },
+    {
+        "name": "Alia Afrin",
+        "profession": "CEO, Afrin",
+        "details": "Good parlour near the city.Highly recommended to everyone for come to this jerin's parlour",
+        "rating": 5,
+        "image": "https://i.ibb.co/M6W6TqN/Ellipse-92.png"
+    },
+    {
+        "name": "Sazzad Hossain",
+        "profession": "CEO, Hossain",
+        "details": "Good parlour near the city.Highly recommended to everyone for come to this jerin's parlour",
+        "rating": 5,
+        "image": "https://i.ibb.co/M6W6TqN/Ellipse-90.png"
+    }
+]
