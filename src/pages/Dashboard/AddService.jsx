@@ -3,6 +3,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
+import toast from 'react-hot-toast';
 
 const AddService = () => {
     const navigate = useNavigate()
@@ -30,14 +31,14 @@ const AddService = () => {
                         .then(res => {
                             console.log(res.data)
                             if (res.data.insertedId) {
-                                alert("Item Added Successfully")
+                                toast.success("Item Added Successfully")
                                 // reset()
                                 // navigate('/')
                             }
 
                         })
                         .catch(err => {
-                            console.log(err)
+                           toast.error("Failed to addeed item")
                         })
                 }
             })
@@ -56,14 +57,14 @@ const AddService = () => {
                         <div className="label">
                             <span className="label-text font-semibold">Service Title</span>
                         </div>
-                        <input type="text" {...register("serviceTitle")} className="input input-bordered  " />
+                        <input type="text" required {...register("serviceTitle")} className="input input-bordered  " />
                     </label>
 
                     <label className="form-control md:w-1/2 w-8/12">
                         <div className="label">
                             <span className="label-text">Upload Image</span>
                         </div>
-                        <input type="file" {...register("image")} placeholder="Upload Image" className="  text-black" />
+                        <input type="file" required {...register("image")} placeholder="Upload Image" className="  text-black" />
                     </label>
                 </div>
 
@@ -72,13 +73,13 @@ const AddService = () => {
                         <div className="label">
                             <span className="label-text">Price</span>
                         </div>
-                        <input type="number" {...register("price")} placeholder="" className="input input-bordered" />
+                        <input type="number" required {...register("price")} placeholder="" className="input input-bordered" />
                     </label>
                     <label className="form-control w-8/12 md:w-1/2">
                         <div className="label">
                             <span className="label-text font-semibold">Description</span>
                         </div>
-                        <textarea {...register("description")} className="textarea  h-[150px]" placeholder="description"></textarea>
+                        <textarea {...register("description")} required className="textarea  h-[150px]" placeholder="description"></textarea>
                     </label>
                 </div>
                 <div className='text-center md:text-right mt-10'>

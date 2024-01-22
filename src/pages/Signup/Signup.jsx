@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { TbFidgetSpinner } from "react-icons/tb";
 import { AuthContext } from '../../providers/AuthProvider';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 const Signup = () => {
 
@@ -32,10 +33,11 @@ const Signup = () => {
                 axios.put(`${import.meta.env.VITE_API_URL}/save-user`, { email })
                     .then(res => {
                         if (res.data.insertedId) {
-                            alert("User created successfully")
+                            toast.success("User created successfully")
                         }
                     })
                     .catch(err => {
+                        toast.error(err.message)
                         console.log(err)
                     })
 
@@ -44,6 +46,7 @@ const Signup = () => {
             })
             .catch(err => {
                 console.log(err);
+                toast.error(err.message)
             })
     }
 
@@ -53,14 +56,17 @@ const Signup = () => {
                 const email = result.user.email
                 axios.put(`${import.meta.env.VITE_API_URL}/save-user`, { email })
                     .then(res => {
+                        toast.success("Login Successfull")
                         console.log(res.data)
                     })
                     .catch(err => {
                         console.log(err)
+                        toast.error(err.message)
                     })
             })
             .catch(err => {
                 console.log(err)
+                toast.error(err.message)
             })
     }
 

@@ -28,15 +28,16 @@ const Dashboard = () => {
                     {/* Sidebar content here */}
                    <nav id='sidebar'>
                    {isAdmin ? <> 
-                        <NavLink to='/dashboard/order-list'><div className='flex gap-3'> <IoCart size={20} /> <span>Order List</span></div></NavLink>
-                        <NavLink to='/dashboard/add-service'><div className=' inline-flex gap-3 mt-3'> <MdOutlineMedicalServices size={20} /> <span>Add Service</span></div></NavLink>
-                        <NavLink to='/dashboard/make-admin'><div className='flex gap-3 mt-3'> <FaUserPlus size={20} /> <span>Make Admin</span></div></NavLink>
-                        <NavLink to='/dashboard/manage-service'><div className='flex gap-3 mt-3'> <MdOutlineManageSearch size={20} /> <span>Manage Services</span></div></NavLink>
+                        <NavLink to='/dashboard/order-list'><div className='flex 
+                        text-[#878787] gap-3'> <span ><IoCart size={20} /></span> <span>Order List</span></div></NavLink>
+                        <NavLink to='/dashboard/add-service'><div className='text-[#878787] inline-flex gap-3 mt-3'> <span ><MdOutlineMedicalServices size={20} /></span> <span>Add Service</span></div></NavLink>
+                        <NavLink to='/dashboard/make-admin'><div className='flex text-[#878787] gap-3 mt-3'> <span ><FaUserPlus size={20} /></span> <span>Make Admin</span></div></NavLink>
+                        <NavLink to='/dashboard/manage-service'><div className='flex text-[#878787] gap-3 mt-3'> <span ><span className='text-[#]'><MdOutlineManageSearch size={20} /></span></span> <span>Manage Services</span></div></NavLink>
                    
 
-                    </> : <><NavLink to='/'><div className='flex gap-3'> <IoCart size={20} /> <span>Book</span></div></NavLink>
-                        <NavLink to='/dashboard/booking-list'><div className='flex gap-3 mt-3'> <IoIosListBox size={20} /> <span>Booking List</span></div></NavLink>
-                        <NavLink to='/dashboard/review'><div className='flex gap-3 mt-3'> <RiMessage2Line size={20} /> <span>Review</span></div></NavLink></>}
+                    </> : <><NavLink to='/'><div className='flex text-[#878787] gap-3'> <IoCart size={20} /> <span>Book</span></div></NavLink>
+                        <NavLink to='/dashboard/booking-list'><div className='flex  text-[#878787] gap-3 mt-3'> <IoIosListBox size={20} /> <span>Booking List</span></div></NavLink>
+                        <NavLink to='/dashboard/review'><div className='flex text-[#878787] gap-3 mt-3'> <RiMessage2Line size={20} /> <span>Review</span></div></NavLink></>}
                    </nav>
 
 

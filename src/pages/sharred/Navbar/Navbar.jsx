@@ -6,6 +6,7 @@ import { AuthContext } from '../../../providers/AuthProvider';
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
     const [open, setIsOpen] = useState(false)
+    console.log(user)
 
     const handleLogout = () => {
         logOut()
@@ -76,7 +77,7 @@ const Navbar = () => {
                 {/* <a className="btn btn-ghost text-xl">daisyUI</a> */}
                 <img src={icon} className='md:w-[150px] w-[100px]' alt="" />
             </div>
-            <div onClick={() => setIsOpen(!open)} className="flex-none relative">
+            <div className="flex-none relative">
                 {/* <button className="btn btn-square btn-ghost">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-5 h-5 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path></svg>
                 </button> */}
@@ -86,7 +87,7 @@ const Navbar = () => {
                     {user ? <button onClick={handleLogout} className='btn bg-[#F63E7B] text-white'>Logout</button> : <Link to='/login'><button className='btn bg-[#F63E7B] text-white'>Login</button></Link>}
 
                 </div>
-                <button  className="btn btn-square btn-ghost md:hidden">
+                <button onClick={() => setIsOpen(!open)} className="btn btn-square btn-ghost md:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-5 h-5 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 </button>
                 {open && <div className='absolute right-0 top-12 '>

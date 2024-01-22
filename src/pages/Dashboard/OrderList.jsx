@@ -79,7 +79,7 @@ const OrderList = () => {
                 </div>
             </div>
         </div> : <ReUsuable
-        title="Order list found empty" heading="Back to Home" address='/'
+        title="Order list found empty" isHeightFull={true} heading="Back to Home" address='/'
         ></ReUsuable>}
      </>
     );

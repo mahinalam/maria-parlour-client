@@ -99,7 +99,7 @@ const ManageService = () => {
                 ></DeleteModal>
 
 
-            </div > : <ReUsuable title="service list found empty" address='/dashboard/add-service' heading="Add Service"></ReUsuable>}
+            </div > : <ReUsuable isHeightFull={true} title="service list found empty" address='/dashboard/add-service' heading="Add Service"></ReUsuable>}
         </>
     );
 };

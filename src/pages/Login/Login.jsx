@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 const Login = () => {
     const { signInWithGoogle, signIn } = useContext(AuthContext)
@@ -25,12 +26,15 @@ const Login = () => {
 
             .then(result => {
 
-                alert('user Login Successfull')
+               if(result.user){
+                toast.success('user Login Successfull')
                 navigate(from, { replace: true });
+               }
 
             })
             .catch(err => {
                 console.log(err)
+                toast.error(err.message)
             })
 
     }
@@ -38,20 +42,25 @@ const Login = () => {
     const handleGoogleSign = () => {
         signInWithGoogle()
             .then(result => {
+                console.log(result.user)
                 const email = result.user.email
                 axios.put(`${import.meta.env.VITE_API_URL}/save-user`, { email })
                     .then(res => {
                         console.log(res.data)
-                        alert('user Login Successfull')
+                       if(result.user){
+                        toast.success('user Login Successfull')
                         navigate(from, { replace: true });
+                       }
                     })
                     .catch(err => {
                         console.log(err)
+                        toast.error(err.message)
                     })
               
             })
             .catch(err => {
                 console.log(err)
+                toast.error(err.message)
             })
     }
 

@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-#sidebar a.active {
+#sidebar a.active div{
     color: #F63E7B;
   }
