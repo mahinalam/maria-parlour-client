@@ -37,7 +37,7 @@ const Testimionals = () => {
 
                     {
                         review.map((item,index) => <SwiperSlide key={index}>
-                            <div className='md:p-16'>
+                            <div className='md:p-16 pb-16 px-2'>
 
                                 <div className='flex gap-4'>
                                     <img className='w-[60px] rounded-full' src={item.image} alt="" />

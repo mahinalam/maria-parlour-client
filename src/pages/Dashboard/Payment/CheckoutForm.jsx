@@ -4,6 +4,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 import { ImSpinner9 } from "react-icons/im";
+import toast from 'react-hot-toast';
+import useBooking from '../../../hooks/useBooking';
 
 const CheckoutForm = ({ service }) => {
     const totalPrice = service.price
@@ -17,6 +19,7 @@ const CheckoutForm = ({ service }) => {
     const [processing, setProcessing] = useState(false)
     console.log(totalPrice)
     const navigate = useNavigate()
+    const [,refetch] = useBooking()
 
 
     useEffect(() => {
@@ -77,6 +80,7 @@ const CheckoutForm = ({ service }) => {
         else {
             console.log('payment-intent', paymentIntent)
             if (paymentIntent.status === 'succeeded') {
+                refetch()
                 setTransactionId(paymentIntent.id)
                 setProcessing(false)
                 console.log(paymentIntent.id)
@@ -98,7 +102,7 @@ const CheckoutForm = ({ service }) => {
                         console.log(res.data)
                         if (res.data.insertedId) {
 
-                            alert('payment successfull')
+                            toast.success('payment successfull')
                            navigate('/dashboard/booking-list')
                         }
                     })

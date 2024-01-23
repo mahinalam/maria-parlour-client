@@ -5,6 +5,7 @@ import axios from 'axios';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import TableRow from './TableRow';
 import ReUsuable from '../../somponents/ReUsuable';
+import toast from 'react-hot-toast';
 
 const OrderList = () => {
     const { user, loading, isLoading } = useContext(AuthContext)
@@ -28,7 +29,7 @@ const OrderList = () => {
         axiosSecure.put(`/services/${id}`,{status})
         .then(res => {
             if(res.data.modifiedCount > 0){
-                alert("Request accept Successfully")
+                toast.success("Request accept Successfully")
             }
         })
         .catch(err => {

@@ -48,7 +48,7 @@ const Login = () => {
                     .then(res => {
                         console.log(res.data)
                        if(result.user){
-                        toast.success('user Login Successfull')
+                        toast.success('Login Successfull')
                         navigate(from, { replace: true });
                        }
                     })

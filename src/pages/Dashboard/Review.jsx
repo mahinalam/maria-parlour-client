@@ -65,7 +65,7 @@ const Review = () => {
                     <div className="label md:w-1/2 w-8/12">
                         <span className="label-text">Upload Image</span>
                     </div>
-                    <input type="file" {...register("image")} placeholder="Upload Image" className="input input-bordered  " />
+                    <input type="file" {...register("image")} placeholder="Upload Image" className=" " />
                 </label>
 
                 <button type='submit' className='btn bg-[#F63E7B] text-white'>Submit</button>

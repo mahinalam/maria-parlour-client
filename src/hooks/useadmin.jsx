@@ -6,7 +6,7 @@ import axios from 'axios';
 const useAdmin = () => {
     const { user, isLoading } = useContext(AuthContext)
     const { data: isAdmin=[], isLoading: adminLoading } = useQuery({
-        queryKey: ['isAdmin', user.email],
+        queryKey: ['isAdmin', user?.email],
         enabled: !isLoading,
         queryFn: async () => {
             const res = await axios.get(`${import.meta.env.VITE_API_URL}/isAdmin?email=${user?.email}`)

@@ -2,10 +2,12 @@ import React, { useContext, useState } from 'react';
 import icon from '../../../assets/logo.png'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import useAdmin from '../../../hooks/useAdmin';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
     const [open, setIsOpen] = useState(false)
+    const [isAdmin] = useAdmin()
     console.log(user)
 
     const handleLogout = () => {
@@ -67,7 +69,7 @@ const Navbar = () => {
         //     </div>
 
         // </div>
-        <div className="navbar bg-base-100 md:mb-0 ">
+        <div className="max-w-[2520px] mx-auto xl:px-20 md:px-10 sm:px-2 px-4 navbar bg-base-100 md:mb-0 fixed top-0 bootom-0 right-0 left-0">
             <div className="flex-none">
                 {/* <button className="btn btn-square btn-ghost">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-5 h-5 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -83,7 +85,7 @@ const Navbar = () => {
                 </button> */}
                 <div className='md:flex justify-between items-center hidden '>
                     <Link className='mr-5'>Home</Link>
-                     <Link to='/dashboard' className='mr-5'>Dashboard</Link>  
+                     <Link to={`${isAdmin ? '/dashboard/order-list' : '/dashboard/booking-list'}`} className='mr-5'>Dashboard</Link>  
                     {user ? <button onClick={handleLogout} className='btn bg-[#F63E7B] text-white'>Logout</button> : <Link to='/login'><button className='btn bg-[#F63E7B] text-white'>Login</button></Link>}
 
                 </div>
